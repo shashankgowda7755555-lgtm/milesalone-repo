@@ -1,0 +1,236 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Travel Companion Design System - Earth tones and sunset gradients
+All colors MUST be HSL for consistency and theme switching
+*/
+
+@layer base {
+  :root {
+    /* Base colors - Warm earth tones */
+    --background: 35 20% 98%;
+    --foreground: 25 15% 15%;
+
+    /* Card system - Subtle warmth */
+    --card: 35 25% 97%;
+    --card-foreground: 25 15% 20%;
+
+    /* Popover system */
+    --popover: 35 25% 97%;
+    --popover-foreground: 25 15% 20%;
+
+    /* Primary - Sunset orange */
+    --primary: 25 95% 53%;
+    --primary-foreground: 35 20% 98%;
+    --primary-glow: 30 90% 65%;
+
+    /* Secondary - Desert sand */
+    --secondary: 45 25% 88%;
+    --secondary-foreground: 25 15% 20%;
+
+    /* Muted - Soft beige */
+    --muted: 40 20% 92%;
+    --muted-foreground: 25 10% 45%;
+
+    /* Accent - Travel blue */
+    --accent: 195 85% 60%;
+    --accent-foreground: 35 20% 98%;
+
+    /* Destructive - Warm red */
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 35 20% 98%;
+
+    /* Borders and inputs */
+    --border: 40 15% 85%;
+    --input: 40 15% 90%;
+    --ring: 25 95% 53%;
+
+    /* Travel-specific colors */
+    --travel-adventure: 120 40% 50%;
+    --travel-culture: 270 50% 60%;
+    --travel-food: 15 80% 55%;
+    --travel-nature: 140 60% 45%;
+
+    /* Gradients */
+    --gradient-sunset: linear-gradient(135deg, hsl(25 95% 53%), hsl(35 85% 60%));
+    --gradient-earth: linear-gradient(180deg, hsl(45 25% 88%), hsl(35 20% 95%));
+    --gradient-sky: linear-gradient(135deg, hsl(195 85% 60%), hsl(220 70% 65%));
+    --gradient-adventure: linear-gradient(135deg, hsl(120 40% 50%), hsl(140 60% 45%));
+
+    /* Shadows */
+    --shadow-warm: 0 4px 20px -2px hsl(25 95% 53% / 0.15);
+    --shadow-card: 0 2px 10px -1px hsl(25 15% 15% / 0.1);
+    --shadow-float: 0 8px 30px -5px hsl(25 95% 53% / 0.25);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Base colors - Dark earth tones */
+    --background: 25 15% 8%;
+    --foreground: 35 20% 95%;
+
+    /* Card system - Dark warmth */
+    --card: 25 15% 12%;
+    --card-foreground: 35 20% 90%;
+
+    /* Popover system */
+    --popover: 25 15% 12%;
+    --popover-foreground: 35 20% 90%;
+
+    /* Primary - Bright sunset */
+    --primary: 25 95% 58%;
+    --primary-foreground: 25 15% 8%;
+    --primary-glow: 30 90% 70%;
+
+    /* Secondary - Dark sand */
+    --secondary: 25 20% 18%;
+    --secondary-foreground: 35 20% 90%;
+
+    /* Muted - Dark beige */
+    --muted: 25 15% 15%;
+    --muted-foreground: 35 10% 65%;
+
+    /* Accent - Bright travel blue */
+    --accent: 195 85% 65%;
+    --accent-foreground: 25 15% 8%;
+
+    /* Destructive - Bright warm red */
+    --destructive: 0 75% 60%;
+    --destructive-foreground: 35 20% 95%;
+
+    /* Borders and inputs */
+    --border: 25 15% 20%;
+    --input: 25 15% 18%;
+    --ring: 25 95% 58%;
+
+    /* Travel-specific colors - brightened for dark mode */
+    --travel-adventure: 120 50% 60%;
+    --travel-culture: 270 60% 70%;
+    --travel-food: 15 85% 65%;
+    --travel-nature: 140 70% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  /* Travel-specific component styles */
+  .travel-card {
+    @apply bg-card border border-border rounded-lg p-4 shadow-[var(--shadow-card)] transition-[var(--transition-smooth)];
+  }
+
+  .travel-card:hover {
+    @apply shadow-[var(--shadow-warm)] transform translate-y-[-2px];
+  }
+
+  .gradient-sunset {
+    background: var(--gradient-sunset);
+  }
+
+  .gradient-earth {
+    background: var(--gradient-earth);
+  }
+
+  .gradient-sky {
+    background: var(--gradient-sky);
+  }
+
+  .gradient-adventure {
+    background: var(--gradient-adventure);
+  }
+
+  .search-glass {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .floating-card {
+    @apply shadow-[var(--shadow-float)] bg-card/90 border border-border/50 backdrop-blur-sm;
+  }
+
+  .travel-button-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 shadow-[var(--shadow-warm)];
+    @apply transition-[var(--transition-smooth)] font-medium rounded-lg px-6 py-3;
+  }
+
+  .travel-button-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80;
+    @apply transition-[var(--transition-smooth)] font-medium rounded-lg px-6 py-3;
+  }
+
+  .travel-input {
+    @apply bg-input border-border focus:border-primary focus:ring-2 focus:ring-primary/20;
+    @apply transition-[var(--transition-smooth)] rounded-lg px-4 py-3;
+  }
+
+  .module-card-adventure {
+    @apply border-l-4 border-l-[hsl(var(--travel-adventure))];
+  }
+
+  .module-card-culture {
+    @apply border-l-4 border-l-[hsl(var(--travel-culture))];
+  }
+
+  .module-card-food {
+    @apply border-l-4 border-l-[hsl(var(--travel-food))];
+  }
+
+  .module-card-nature {
+    @apply border-l-4 border-l-[hsl(var(--travel-nature))];
+  }
+
+  .text-travel-adventure {
+    color: hsl(var(--travel-adventure));
+  }
+
+  .text-travel-culture {
+    color: hsl(var(--travel-culture));
+  }
+
+  .text-travel-food {
+    color: hsl(var(--travel-food));
+  }
+
+  .text-travel-nature {
+    color: hsl(var(--travel-nature));
+  }
+}

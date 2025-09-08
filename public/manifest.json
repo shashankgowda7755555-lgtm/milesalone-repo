@@ -1,0 +1,62 @@
+{
+  "name": "Travel Companion - Personal Intelligence Hub",
+  "short_name": "Travel Companion",
+  "description": "Your personal offline travel companion with universal intelligence - track places, people, experiences, and more with natural language search",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fdf8f4",
+  "theme_color": "#f97316",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icon-512x512.png", 
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "categories": ["travel", "productivity", "lifestyle"],
+  "shortcuts": [
+    {
+      "name": "Add Travel Pin",
+      "short_name": "Add Pin",
+      "description": "Quickly add a new travel destination",
+      "url": "/pins?action=add",
+      "icons": [{"src": "/icon-192x192.png", "sizes": "192x192"}]
+    },
+    {
+      "name": "Universal Search",
+      "short_name": "Search", 
+      "description": "Search across all your travel data",
+      "url": "/?focus=search",
+      "icons": [{"src": "/icon-192x192.png", "sizes": "192x192"}]
+    },
+    {
+      "name": "Journal Entry",
+      "short_name": "Journal",
+      "description": "Write about your travel experience",
+      "url": "/journal?action=add", 
+      "icons": [{"src": "/icon-192x192.png", "sizes": "192x192"}]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot-wide.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/screenshot-narrow.png", 
+      "sizes": "750x1334",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ]
+}
